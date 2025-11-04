@@ -238,13 +238,21 @@ namespace POS02_For_Restuarent
             }
             else
             {
-               
-                if(lbxIncluded_items_to_the_bill.Items.Count > 0)
+
+                if(lbxIncluded_items_to_the_bill.Items.Count == 0)
                 {
+                    Public_Items.ItemNames = tbxSearch.Text;// used to retrieve and display item name in tbx in frmQuantityConfiguration form
+
+                    frmQuantityConfigeOtherItems quenConfig = new frmQuantityConfigeOtherItems(this);
+                    quenConfig.ShowDialog();
+                }
+                else
+                {
+
                     // This code is use to prevent errors when arive printing bill (stop inserting duplicate values. Also, stope malfunctioning of qty and amounts)
                     foreach (var itemNames in lbxIncluded_items_to_the_bill.Items.Cast<string>().ToList())
                     {
-                        if (itemNames.Equals(tbxSearch.Text))
+                        if (itemNames == tbxSearch.Text)
                         {
 
                             MessageBox.Show("Need to remove the existing item before changing the QTY", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -252,24 +260,33 @@ namespace POS02_For_Restuarent
 
 
                         }
-                        else
-                        {
-                            Public_Items.ItemNames = tbxSearch.Text;// used to retrieve and display item name in tbx in frmQuantityConfiguration form
+                       
 
-                            frmQuantityConfigeOtherItems quenConfig = new frmQuantityConfigeOtherItems(this);
-                            quenConfig.ShowDialog();
+                    }
+
+                    string checking_existing_values = "No";
+
+                    foreach (var itemNames in lbxIncluded_items_to_the_bill.Items.Cast<string>().ToList())
+                    {
+                        if (itemNames.Contains(tbxSearch.Text))
+                        {
+
+                            checking_existing_values = "Yes";
                             break;
+
+
                         }
 
                     }
 
-                }
-                else
-                {
-                    Public_Items.ItemNames = tbxSearch.Text;// used to retrieve and display item name in tbx in frmQuantityConfiguration form
+                    if (checking_existing_values == "No")
+                    {
+                        Public_Items.ItemNames = tbxSearch.Text;// used to retrieve and display item name in tbx in frmQuantityConfiguration form
 
-                    frmQuantityConfigeOtherItems quenConfig = new frmQuantityConfigeOtherItems(this);
-                    quenConfig.ShowDialog();
+                        frmQuantityConfigeOtherItems quenConfig = new frmQuantityConfigeOtherItems(this);
+                        quenConfig.ShowDialog();
+                    }
+
                 }
 
 
@@ -640,7 +657,7 @@ namespace POS02_For_Restuarent
                                     Program.ds.Tables["TblSingleItemPrice_dst"].Clear();
                                 }
                                 /// retrieving single item price
-                                Program.da = new SqlDataAdapter("SELECT Price FROM TblOther_Items WHERE ItemName='" + non_barcode_item_names + "' ", Program.con);
+                                Program.da = new SqlDataAdapter("SELECT Price FROM TblOther_Items WHERE ItemName= N'" + non_barcode_item_names + "' ", Program.con);
                                 Program.da.Fill(Program.ds, "TblSingleItemPrice_dst");
 
                                 double founded_priceOfRemvingItems = 0;

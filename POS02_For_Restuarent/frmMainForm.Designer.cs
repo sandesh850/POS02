@@ -195,12 +195,12 @@ namespace POS02_For_Restuarent
             // lbxNone_barcode_Items_search
             // 
             this.lbxNone_barcode_Items_search.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbxNone_barcode_Items_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbxNone_barcode_Items_search.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbxNone_barcode_Items_search.FormattingEnabled = true;
-            this.lbxNone_barcode_Items_search.ItemHeight = 20;
+            this.lbxNone_barcode_Items_search.ItemHeight = 23;
             this.lbxNone_barcode_Items_search.Location = new System.Drawing.Point(8, 70);
             this.lbxNone_barcode_Items_search.Name = "lbxNone_barcode_Items_search";
-            this.lbxNone_barcode_Items_search.Size = new System.Drawing.Size(251, 324);
+            this.lbxNone_barcode_Items_search.Size = new System.Drawing.Size(251, 303);
             this.lbxNone_barcode_Items_search.TabIndex = 1;
             this.lbxNone_barcode_Items_search.SelectedIndexChanged += new System.EventHandler(this.lbxNone_barcode_Items_search_SelectedIndexChanged);
             // 

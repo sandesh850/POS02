@@ -109,7 +109,7 @@ namespace POS02_For_Restuarent
                     }
 
                     // used to retrieve the single item price from the database
-                    Program.da = new SqlDataAdapter("SELECT Price FROM TblOther_Items WHERE ItemName='" + tbxItemName.Text + "' ", Program.con);
+                    Program.da = new SqlDataAdapter("SELECT Price FROM TblOther_Items WHERE ItemName= N'" + tbxItemName.Text + "' ", Program.con);
                     Program.da.Fill(Program.ds, "TblNoN_BarcodeItems_prices_dst");
 
                     double non_barcode_item_price = Convert.ToDouble(Program.ds.Tables["TblNoN_BarcodeItems_prices_dst"].Rows[0]["Price"]);
