@@ -344,7 +344,7 @@ namespace POS02_For_Restuarent
                         Program.ds.Tables["TblItemNames_search_dst"].Clear();
                     }
 
-                    Program.da = new System.Data.SqlClient.SqlDataAdapter("SELECT ItemName FROM TblOther_Items WHERE ItemName LIKE '%" + tbxSearch.Text + "%' ", Program.con);
+                    Program.da = new System.Data.SqlClient.SqlDataAdapter("SELECT ItemName FROM TblOther_Items WHERE ItemName LIKE N'%" + tbxSearch.Text + "%' ", Program.con);
                     Program.da.Fill(Program.ds, "TblItemNames_search_dst");
 
                     foreach (DataRow data in Program.ds.Tables["TblItemNames_search_dst"].Rows)

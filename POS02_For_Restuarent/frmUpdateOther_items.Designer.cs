@@ -166,6 +166,7 @@
             this.tbxItemName.Name = "tbxItemName";
             this.tbxItemName.Size = new System.Drawing.Size(295, 30);
             this.tbxItemName.TabIndex = 1;
+            this.tbxItemName.Click += new System.EventHandler(this.tbxItemName_Click);
             // 
             // label2
             // 

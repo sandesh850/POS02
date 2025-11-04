@@ -91,6 +91,7 @@
             this.tbxItemPrice.Name = "tbxItemPrice";
             this.tbxItemPrice.Size = new System.Drawing.Size(295, 26);
             this.tbxItemPrice.TabIndex = 2;
+            this.tbxItemPrice.Click += new System.EventHandler(this.tbxItemPrice_Click);
             // 
             // label4
             // 
@@ -117,6 +118,7 @@
             this.tbxItemName.Name = "tbxItemName";
             this.tbxItemName.Size = new System.Drawing.Size(295, 26);
             this.tbxItemName.TabIndex = 1;
+            this.tbxItemName.Click += new System.EventHandler(this.tbxItemName_Click);
             // 
             // label2
             // 

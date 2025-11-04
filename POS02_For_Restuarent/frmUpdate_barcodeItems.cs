@@ -26,6 +26,7 @@ namespace POS02_For_Restuarent
         private void tbxprice_Leave(object sender, EventArgs e)
         {
             lblPrice_of_a_single_item.Visible = false;
+            tbxSearchByUsingBarcode.Text = "Search";
         }
 
         private void frmUpdate_barcodeItems_Load(object sender, EventArgs e)
@@ -57,7 +58,7 @@ namespace POS02_For_Restuarent
 
         private void tbxSearchByUsingBarcode_Leave(object sender, EventArgs e)
         {
-            tbxSearchByUsingBarcode.Text = "Search";
+            //tbxSearchByUsingBarcode.Text = "Search";
         }
 
         private void tbxSearchByUsingBarcode_TextChanged(object sender, EventArgs e)
@@ -74,7 +75,7 @@ namespace POS02_For_Restuarent
             if (tbxSearchByUsingBarcode.Text != "Search")
             {
 
-                Program.da = new System.Data.SqlClient.SqlDataAdapter("SELECT Barcode FROM TblBarcode_Items WHERE Barcode LIKE '%" + tbxSearchByUsingBarcode.Text + "%' ", Program.con);
+                Program.da = new System.Data.SqlClient.SqlDataAdapter("SELECT Barcode FROM TblBarcode_Items WHERE Barcode LIKE N'%" + tbxSearchByUsingBarcode.Text + "%' ", Program.con);
                 Program.da.Fill(Program.ds, "TblBarcodes_dst");
 
                 foreach (DataRow Barcodes in Program.ds.Tables["TblBarcodes_dst"].Rows)
@@ -126,10 +127,23 @@ namespace POS02_For_Restuarent
             }
         }
 
-        private void btnUpdateItems_Click(object sender, EventArgs e)
+       
+        
+        private void btnClearAll_Click_1(object sender, EventArgs e)
         {
-            if(tbxBarcode.Text != string.Empty)
+            tbxSearchByUsingBarcode.Text = "Search";
+
+            tbxBarcode.Clear();
+            tbxQty.Clear();
+            tbxprice.Clear();
+            tbxItemName.Clear();
+        }
+
+        private void btnUpdateItems_Click_1(object sender, EventArgs e)
+        {
+            if (tbxBarcode.Text != string.Empty)
             {
+                tbxSearchByUsingBarcode.Text = "Search";
 
                 try
                 {
@@ -142,7 +156,7 @@ namespace POS02_For_Restuarent
                             cmd.Parameters.AddWithValue("@Qty", tbxQty.Text);
                             cmd.Parameters.AddWithValue("@Price", tbxprice.Text);
                             cmd.Parameters.AddWithValue("@Barcode", tbxBarcode.Text);
-                            cmd.Parameters.AddWithValue("@Name",tbxItemName.Text);
+                            cmd.Parameters.AddWithValue("@Name", tbxItemName.Text);
 
                             con.Open();
                             cmd.ExecuteNonQuery();
@@ -164,22 +178,33 @@ namespace POS02_For_Restuarent
             }
             else
             {
-               MessageBox.Show("Please select a item", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please select a item", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
-        private void btnRemove_Click(object sender, EventArgs e)
+        private void tbxItemName_Leave(object sender, EventArgs e)
         {
-
+            //tbxSearchByUsingBarcode.Text = "Search";
         }
 
-        private void btnClearAll_Click(object sender, EventArgs e)
+        private void tbxQty_Leave(object sender, EventArgs e)
         {
-            tbxBarcode.Clear();
-            tbxQty.Clear();
-            tbxprice.Clear();
-            tbxItemName.Clear();
+            //tbxSearchByUsingBarcode.Text = "Search";
+        }
+
+        private void tbxItemName_Click(object sender, EventArgs e)
+        {
+            tbxSearchByUsingBarcode.Text = "Search";
+        }
+
+        private void tbxQty_Click(object sender, EventArgs e)
+        {
+            tbxSearchByUsingBarcode.Text = "Search";
+        }
+
+        private void tbxprice_Click_1(object sender, EventArgs e)
+        {
+            tbxSearchByUsingBarcode.Text = "Search";
         }
     }
 }

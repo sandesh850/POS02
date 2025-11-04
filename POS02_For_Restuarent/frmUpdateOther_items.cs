@@ -24,6 +24,7 @@ namespace POS02_For_Restuarent
         private void tbxItemPrice_Click(object sender, EventArgs e)
         {
             lblPrice_of_a_single_item.Visible = true;
+            tbxSearchByUsing_ItemName.Text = "Search";
         }
 
         private void tbxItemPrice_Leave(object sender, EventArgs e)
@@ -57,7 +58,7 @@ namespace POS02_For_Restuarent
             {
 
                 
-                Program.da = new System.Data.SqlClient.SqlDataAdapter("SELECT ItemName FROM TblOther_Items WHERE ItemName LIKE '%" + tbxSearchByUsing_ItemName.Text + "%' ", Program.con);
+                Program.da = new System.Data.SqlClient.SqlDataAdapter("SELECT ItemName FROM TblOther_Items WHERE ItemName LIKE N'%" + tbxSearchByUsing_ItemName.Text + "%' ", Program.con);
                 Program.da.Fill(Program.ds, "Tbl_ItemNames_dst");
 
                 foreach (DataRow item_Nmes in Program.ds.Tables["Tbl_ItemNames_dst"].Rows)
@@ -88,7 +89,7 @@ namespace POS02_For_Restuarent
 
         private void tbxSearchByUsingBarcode_Leave(object sender, EventArgs e)
         {
-            tbxSearchByUsing_ItemName.Text = "Search";
+            
         }
 
         private void frmUpdateOther_items_Load(object sender, EventArgs e)
@@ -116,7 +117,7 @@ namespace POS02_For_Restuarent
 
             }
 
-            Program.da = new System.Data.SqlClient.SqlDataAdapter("SELECT * FROM TblOther_Items WHERE ItemName='" + lbxItemNames.SelectedItem + "' ", Program.con);
+            Program.da = new System.Data.SqlClient.SqlDataAdapter("SELECT * FROM TblOther_Items WHERE ItemName= N'" + lbxItemNames.SelectedItem + "' ", Program.con);
             Program.da.Fill(Program.ds, "TblOther_Items_dst");
 
             foreach(DataRow data in Program.ds.Tables["TblOther_Items_dst"].Rows)
@@ -138,7 +139,9 @@ namespace POS02_For_Restuarent
         {
             try
             {
-                using(SqlConnection con = SQLCon.GetConnection())
+                tbxSearchByUsing_ItemName.Text = "Search";
+
+                using (SqlConnection con = SQLCon.GetConnection())
                 {
                     var query = "UPDATE TblOther_Items SET ItemName =@ItemName, Price = @Price WHERE OItem_id = @OItem_id ";
 
@@ -160,6 +163,11 @@ namespace POS02_For_Restuarent
             {
                 MessageBox.Show(ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
+        }
+
+        private void tbxItemName_Click(object sender, EventArgs e)
+        {
+            tbxSearchByUsing_ItemName.Text = "Search";
         }
     }
 }

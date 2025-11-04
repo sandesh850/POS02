@@ -166,6 +166,7 @@
             this.tbxSearchByUsingBarcode.Size = new System.Drawing.Size(189, 22);
             this.tbxSearchByUsingBarcode.TabIndex = 11;
             this.tbxSearchByUsingBarcode.Text = "Search";
+            this.tbxSearchByUsingBarcode.Click += new System.EventHandler(this.tbxSearchByUsingBarcode_Click);
             this.tbxSearchByUsingBarcode.TextChanged += new System.EventHandler(this.tbxSearchByUsingBarcode_TextChanged);
             // 
             // lbxBarcodes

@@ -41,7 +41,7 @@ namespace POS02_For_Restuarent
 
         private void tbxSearch_Leave(object sender, EventArgs e)
         {
-            tbxSearch.Text = "Search";
+            
         }
 
         private void tbxSearch_TextChanged(object sender, EventArgs e)
@@ -77,7 +77,7 @@ namespace POS02_For_Restuarent
                     //lbxItemNames.Refresh();
                 }
 
-                Program.da = new System.Data.SqlClient.SqlDataAdapter("SELECT ItemName FROM TblOther_Items WHERE ItemName LIKE '%" + tbxSearch.Text + "%' ", Program.con);
+                Program.da = new System.Data.SqlClient.SqlDataAdapter("SELECT ItemName FROM TblOther_Items WHERE ItemName LIKE N'%" + tbxSearch.Text + "%' ", Program.con);
                 Program.da.Fill(Program.ds, "TblItemNames_Search_dst");
 
                 foreach (DataRow itemNames in Program.ds.Tables["TblItemNames_Search_dst"].Rows)
@@ -102,7 +102,7 @@ namespace POS02_For_Restuarent
                 }
 
 
-                Program.da = new System.Data.SqlClient.SqlDataAdapter("SELECT * FROM TblOther_Items WHERE ItemName='" + lbxItemNames.SelectedItem + "' ", Program.con);
+                Program.da = new System.Data.SqlClient.SqlDataAdapter("SELECT * FROM TblOther_Items WHERE ItemName= N'" + lbxItemNames.SelectedItem + "' ", Program.con);
                 Program.da.Fill(Program.ds, "TblOther_Items_dst");
 
                 tbxItemName.Text = Program.ds.Tables["TblOther_Items_dst"].Rows[0]["ItemName"].ToString();
@@ -118,7 +118,9 @@ namespace POS02_For_Restuarent
         {
             try
             {
-                if(tbxItemName.Text != string.Empty)//Step 01
+                tbxSearch.Text = "Search";
+
+                if (tbxItemName.Text != string.Empty)//Step 01
                 {
                     //Step 02
                     if (DialogResult.Yes == MessageBox.Show("Are you sure about this", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
@@ -167,6 +169,16 @@ namespace POS02_For_Restuarent
             {
                 MessageBox.Show(error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void tbxItemName_Click(object sender, EventArgs e)
+        {
+            tbxSearch.Text = "Search";
+        }
+
+        private void tbxItemPrice_Click(object sender, EventArgs e)
+        {
+            tbxSearch.Text = "Search";
         }
     }
 }

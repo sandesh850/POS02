@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUpdate_barcodeItems));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tbxItemName = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.btnClearAll = new System.Windows.Forms.Button();
             this.lblPrice_of_a_single_item = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -45,9 +48,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbxBarcodes = new System.Windows.Forms.ListBox();
             this.tbxSearchByUsingBarcode = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.tbxItemName = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,6 +77,33 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Item details";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(184, 161);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(15, 20);
+            this.label8.TabIndex = 31;
+            this.label8.Text = ":";
+            // 
+            // tbxItemName
+            // 
+            this.tbxItemName.Location = new System.Drawing.Point(222, 158);
+            this.tbxItemName.Name = "tbxItemName";
+            this.tbxItemName.Size = new System.Drawing.Size(295, 27);
+            this.tbxItemName.TabIndex = 29;
+            this.tbxItemName.Click += new System.EventHandler(this.tbxItemName_Click);
+            this.tbxItemName.Leave += new System.EventHandler(this.tbxItemName_Leave);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(79, 161);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(99, 20);
+            this.label9.TabIndex = 30;
+            this.label9.Text = "Item Name";
+            // 
             // btnClearAll
             // 
             this.btnClearAll.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -89,7 +116,7 @@
             this.btnClearAll.TabIndex = 28;
             this.btnClearAll.Text = "Clear All";
             this.btnClearAll.UseVisualStyleBackColor = false;
-            this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
+            this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click_1);
             // 
             // lblPrice_of_a_single_item
             // 
@@ -141,7 +168,7 @@
             this.btnUpdateItems.TabIndex = 4;
             this.btnUpdateItems.Text = "Update";
             this.btnUpdateItems.UseVisualStyleBackColor = false;
-            this.btnUpdateItems.Click += new System.EventHandler(this.btnUpdateItems_Click);
+            this.btnUpdateItems.Click += new System.EventHandler(this.btnUpdateItems_Click_1);
             // 
             // tbxprice
             // 
@@ -149,7 +176,7 @@
             this.tbxprice.Name = "tbxprice";
             this.tbxprice.Size = new System.Drawing.Size(295, 27);
             this.tbxprice.TabIndex = 3;
-            this.tbxprice.Click += new System.EventHandler(this.tbxprice_Click);
+            this.tbxprice.Click += new System.EventHandler(this.tbxprice_Click_1);
             this.tbxprice.Leave += new System.EventHandler(this.tbxprice_Leave);
             // 
             // label4
@@ -167,6 +194,8 @@
             this.tbxQty.Name = "tbxQty";
             this.tbxQty.Size = new System.Drawing.Size(295, 27);
             this.tbxQty.TabIndex = 2;
+            this.tbxQty.Click += new System.EventHandler(this.tbxQty_Click);
+            this.tbxQty.Leave += new System.EventHandler(this.tbxQty_Leave);
             // 
             // label3
             // 
@@ -226,31 +255,6 @@
             this.tbxSearchByUsingBarcode.Click += new System.EventHandler(this.tbxSearchByUsingBarcode_Click);
             this.tbxSearchByUsingBarcode.TextChanged += new System.EventHandler(this.tbxSearchByUsingBarcode_TextChanged);
             this.tbxSearchByUsingBarcode.Leave += new System.EventHandler(this.tbxSearchByUsingBarcode_Leave);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(184, 161);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(15, 20);
-            this.label8.TabIndex = 31;
-            this.label8.Text = ":";
-            // 
-            // tbxItemName
-            // 
-            this.tbxItemName.Location = new System.Drawing.Point(222, 158);
-            this.tbxItemName.Name = "tbxItemName";
-            this.tbxItemName.Size = new System.Drawing.Size(295, 27);
-            this.tbxItemName.TabIndex = 29;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(79, 161);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(99, 20);
-            this.label9.TabIndex = 30;
-            this.label9.Text = "Item Name";
             // 
             // frmUpdate_barcodeItems
             // 

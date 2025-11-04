@@ -97,9 +97,9 @@ namespace POS02_For_Restuarent
         private void btnRemove_Items_Click(object sender, EventArgs e)
         {
             //string yesNo = "";
-
+            tbxSearchByUsingBarcode.Text = "Search";
             // Step 01
-            if(DialogResult.Yes == MessageBox.Show("Are you sure about this","Warning",MessageBoxButtons.YesNo,MessageBoxIcon.Warning))
+            if (DialogResult.Yes == MessageBox.Show("Are you sure about this","Warning",MessageBoxButtons.YesNo,MessageBoxIcon.Warning))
             {
                 try
                 {
@@ -146,6 +146,9 @@ namespace POS02_For_Restuarent
             }
         }
 
-          
+        private void tbxSearchByUsingBarcode_Click(object sender, EventArgs e)
+        {
+            tbxSearchByUsingBarcode.Clear();
+        }
     }
 }
