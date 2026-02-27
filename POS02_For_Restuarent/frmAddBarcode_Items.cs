@@ -99,7 +99,7 @@ namespace POS02_For_Restuarent
 
                             cmd.Connection = con;
                             con.Open();
-                            cmd.ExecuteNonQuery();
+                            cmd.ExecuteNonQuery();//testing
 
 
                         }
