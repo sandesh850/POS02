@@ -87,15 +87,15 @@ namespace POS02_For_Restuarent
                 {
                     using (SqlConnection con = SQLCon.GetConnection())
                     {
-                        var query = "INSERT INTO TblBarcode_Items VALUES(@Barcode,@BitemID,@Price,@Qty,@ItemName)";
+                        var query = "INSERT INTO TblBarcode_Items VALUES(@BitemID,@Barcode,@Price,@ItemName,@Qty)";
 
                         using (SqlCommand cmd = new SqlCommand(query, con))
                         {
                             cmd.Parameters.AddWithValue("@BitemID", BitemID);
                             cmd.Parameters.AddWithValue("@Barcode", tbxBarcode.Text);
                             cmd.Parameters.AddWithValue("@Price", tbxprice.Text);
-                            cmd.Parameters.AddWithValue("@Qty", tbxItemName.Text);
-                            cmd.Parameters.AddWithValue("@ItemName", tbxQty.Text);
+                            cmd.Parameters.AddWithValue("@ItemName", tbxItemName.Text);
+                            cmd.Parameters.AddWithValue("@Qty", tbxQty.Text);
 
                             cmd.Connection = con;
                             con.Open();
