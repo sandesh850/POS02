@@ -228,6 +228,8 @@ namespace POS02_For_Restuarent
             Program.da.Fill(Program.ds, "TblBills_dst");
 
             Dgv.DataSource = Program.ds.Tables["TblBills_dst"];
+            //Dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells; // This code is use to Resize all cells into same size
+            Dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // This code is use to Fill Full Width of all colums(Resize) 
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
@@ -474,6 +476,11 @@ namespace POS02_For_Restuarent
                     {
                         MessageBox.Show("Please enter the paid amount", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         tbxPaidAmount.Focus();
+                    }
+                    else if(tbxBalance.Text == string.Empty)
+                    {
+                        MessageBox.Show("Please Calculate the Balance (Click on OK Button)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        tbxBalance.Focus();
                     }
                     else
                     {
