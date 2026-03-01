@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddBarcode_Items));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tbxItemName = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.lblTotal_Items = new System.Windows.Forms.Label();
             this.lblPrice_of_a_single_item = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -43,9 +46,6 @@
             this.tbxBarcode = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.tbxItemName = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +73,31 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Item details";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(183, 163);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(15, 20);
+            this.label8.TabIndex = 13;
+            this.label8.Text = ":";
+            // 
+            // tbxItemName
+            // 
+            this.tbxItemName.Location = new System.Drawing.Point(221, 160);
+            this.tbxItemName.Name = "tbxItemName";
+            this.tbxItemName.Size = new System.Drawing.Size(295, 27);
+            this.tbxItemName.TabIndex = 1;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(79, 163);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(99, 20);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "Item Name";
             // 
             // lblTotal_Items
             // 
@@ -130,7 +155,7 @@
             this.btnAddItems.Location = new System.Drawing.Point(420, 384);
             this.btnAddItems.Name = "btnAddItems";
             this.btnAddItems.Size = new System.Drawing.Size(96, 39);
-            this.btnAddItems.TabIndex = 3;
+            this.btnAddItems.TabIndex = 4;
             this.btnAddItems.Text = "Add";
             this.btnAddItems.UseVisualStyleBackColor = false;
             this.btnAddItems.Click += new System.EventHandler(this.btnAddItems_Click);
@@ -140,7 +165,7 @@
             this.tbxprice.Location = new System.Drawing.Point(221, 298);
             this.tbxprice.Name = "tbxprice";
             this.tbxprice.Size = new System.Drawing.Size(295, 27);
-            this.tbxprice.TabIndex = 2;
+            this.tbxprice.TabIndex = 3;
             this.tbxprice.Click += new System.EventHandler(this.tbxprice_Click);
             this.tbxprice.TextChanged += new System.EventHandler(this.tbxprice_TextChanged);
             this.tbxprice.Leave += new System.EventHandler(this.tbxprice_Leave);
@@ -159,7 +184,7 @@
             this.tbxQty.Location = new System.Drawing.Point(221, 224);
             this.tbxQty.Name = "tbxQty";
             this.tbxQty.Size = new System.Drawing.Size(295, 27);
-            this.tbxQty.TabIndex = 1;
+            this.tbxQty.TabIndex = 2;
             this.tbxQty.Click += new System.EventHandler(this.tbxQty_Click);
             this.tbxQty.TextChanged += new System.EventHandler(this.tbxQty_TextChanged);
             this.tbxQty.Leave += new System.EventHandler(this.tbxQty_Leave);
@@ -199,31 +224,6 @@
             this.label1.Size = new System.Drawing.Size(391, 50);
             this.label1.TabIndex = 1;
             this.label1.Text = "Add barcode items";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(183, 163);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(15, 20);
-            this.label8.TabIndex = 13;
-            this.label8.Text = ":";
-            // 
-            // tbxItemName
-            // 
-            this.tbxItemName.Location = new System.Drawing.Point(221, 160);
-            this.tbxItemName.Name = "tbxItemName";
-            this.tbxItemName.Size = new System.Drawing.Size(295, 27);
-            this.tbxItemName.TabIndex = 11;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(79, 163);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(99, 20);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "Item Name";
             // 
             // frmAddBarcode_Items
             // 

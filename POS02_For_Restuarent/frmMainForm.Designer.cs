@@ -95,7 +95,7 @@ namespace POS02_For_Restuarent
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.Turquoise;
             this.panel3.Location = new System.Drawing.Point(14, 119);
@@ -105,7 +105,7 @@ namespace POS02_For_Restuarent
             // 
             // panel10
             // 
-            this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel10.Controls.Add(this.tbxSearchIncluded_Items);
@@ -172,7 +172,7 @@ namespace POS02_For_Restuarent
             // 
             // panel11
             // 
-            this.panel11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.panel11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel11.BackColor = System.Drawing.Color.Turquoise;
             this.panel11.Location = new System.Drawing.Point(8, 290);
@@ -201,7 +201,7 @@ namespace POS02_For_Restuarent
             this.lbxNone_barcode_Items_search.ItemHeight = 23;
             this.lbxNone_barcode_Items_search.Location = new System.Drawing.Point(8, 70);
             this.lbxNone_barcode_Items_search.Name = "lbxNone_barcode_Items_search";
-            this.lbxNone_barcode_Items_search.Size = new System.Drawing.Size(251, 165);
+            this.lbxNone_barcode_Items_search.Size = new System.Drawing.Size(251, 188);
             this.lbxNone_barcode_Items_search.TabIndex = 1;
             this.lbxNone_barcode_Items_search.SelectedIndexChanged += new System.EventHandler(this.lbxNone_barcode_Items_search_SelectedIndexChanged);
             // 
@@ -252,7 +252,7 @@ namespace POS02_For_Restuarent
             // 
             // Dgv
             // 
-            this.Dgv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.Dgv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Dgv.BackgroundColor = System.Drawing.Color.OldLace;
             this.Dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -269,7 +269,7 @@ namespace POS02_For_Restuarent
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.btnPrint);
@@ -640,7 +640,7 @@ namespace POS02_For_Restuarent
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -682,7 +682,6 @@ namespace POS02_For_Restuarent
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(477, 835);
             this.panel1.TabIndex = 0;
-            //this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel12
             // 
