@@ -463,7 +463,7 @@ namespace POS02_For_Restuarent
 
                 if (Public_Items.barcode_Item_price.Count() > 0)
                 {
-                    MessageBox.Show("!! You do not include the barcode items. Please include those", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("!! You do not include the barcode items. Please include those (Click on Sum of Barcode Items)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     btnSumOfBarcodeItems.Focus();
                 }
                 else
@@ -483,11 +483,12 @@ namespace POS02_For_Restuarent
                     {
                         TotalPrice = Convert.ToDouble(tbxTotal.Text);
                     }
-                    else if (tbxPaidAmount.Text != string.Empty)
+
+                    if (tbxPaidAmount.Text != string.Empty)
                     {
                         paindAmount = Convert.ToDouble(tbxPaidAmount.Text);
                     }
-
+                   
                     balance = paindAmount - TotalPrice;
 
 
@@ -509,7 +510,7 @@ namespace POS02_For_Restuarent
                     }
                     if(balance != Convert.ToDouble(tbxBalance.Text))
                     {
-                        MessageBox.Show("!! Please calculate the balance !! (Click on OK Button)","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        MessageBox.Show("!! Please calculate the balance !! (Click on OK Button)", "Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                         btnOK.Focus();
                     }
                     else
@@ -640,7 +641,6 @@ namespace POS02_For_Restuarent
                 //}
               
                 //MessageBox.Show(cn.ToString());
-
 
 
                 tbxSearch.Text = "Search"; // Seting "Search" Value into Non-Barcode Item search bar (First search bar that use to add Non-barcode items into bill)
@@ -1396,6 +1396,10 @@ namespace POS02_For_Restuarent
         private void tbxPaidAmount_TextChanged(object sender, EventArgs e)
         {
             //tbxSearch.Text = "Search"; // Seting "Search" Value into Non-Barcode Item search bar (First search bar that use to add Non-barcode items into bill)
+            if(tbxPaidAmount.Text == string.Empty)
+            {
+                tbxBalance.Clear();
+            }
         }
 
         private void frmMainForm_Click(object sender, EventArgs e)

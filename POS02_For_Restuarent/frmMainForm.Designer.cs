@@ -432,6 +432,7 @@ namespace POS02_For_Restuarent
             this.cmbPayment_method.ForeColor = System.Drawing.Color.Turquoise;
             this.cmbPayment_method.FormattingEnabled = true;
             this.cmbPayment_method.Items.AddRange(new object[] {
+            "Please select",
             "Cash",
             "Card"});
             this.cmbPayment_method.Location = new System.Drawing.Point(235, 689);
