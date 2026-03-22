@@ -812,12 +812,13 @@ namespace POS02_For_Restuarent
             else
             {
                 lbxIncluded_items_to_the_bill.Items.Clear();
-                lbxIncluded_items_to_the_bill.Refresh();
+                //lbxIncluded_items_to_the_bill.Refresh();
                 //ArrayList ListfilterationCharacters = new ArrayList();
 
+                // use for search Non barcode items
                 foreach (string includedItems in Public_Items.non_barcodeItem_Names)
                 {
-                    lbxIncluded_items_to_the_bill.Items.Clear();
+                    //lbxIncluded_items_to_the_bill.Items.Clear();
 
                     foreach (string item in Public_Items.non_barcodeItem_Names)
                     {
@@ -857,14 +858,22 @@ namespace POS02_For_Restuarent
                     //}
                 }
 
-
+                // use for search barcode items by using item name
                 foreach (string includedItems in Public_Items.barcode_item_names)
                 {
-                    
-                    if (tbxSearchIncluded_Items.Text == includedItems)
+                    //lbxIncluded_items_to_the_bill.Items.Clear();
+
+                    foreach(string BarcodeItems in Public_Items.barcode_item_names)
                     {
-                        lbxIncluded_items_to_the_bill.Items.Add(includedItems);
+                        if(BarcodeItems.StartsWith(tbxSearchIncluded_Items.Text, StringComparison.OrdinalIgnoreCase))
+                        {
+                            lbxIncluded_items_to_the_bill.Items.Add(BarcodeItems);
+                        }
                     }
+                    //if (tbxSearchIncluded_Items.Text == includedItems)
+                    //{
+                    //    lbxIncluded_items_to_the_bill.Items.Add(includedItems);
+                    //}
                 }
             }
         }
