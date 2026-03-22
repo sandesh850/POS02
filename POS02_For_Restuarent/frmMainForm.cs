@@ -468,6 +468,30 @@ namespace POS02_For_Restuarent
                 }
                 else
                 {
+                    // use to calculate and check the total value and balance value is correctly calculated or not
+                    double TotalPrice = 0;
+                    double paindAmount =0;
+                    double balance = 0;
+
+                    if (Convert.ToDouble(tbxPaidAmount.Text) < Convert.ToDouble(tbxTotal.Text))
+                    {
+                        MessageBox.Show(" !! The paid amount less than the Total !! ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+
+                    if (tbxTotal.Text != string.Empty)
+                    {
+                        TotalPrice = Convert.ToDouble(tbxTotal.Text);
+                    }
+                    else if (tbxPaidAmount.Text != string.Empty)
+                    {
+                        paindAmount = Convert.ToDouble(tbxPaidAmount.Text);
+                    }
+
+                    balance = paindAmount - TotalPrice;
+
+
+
                     if (cmbPayment_method.Text == "Please select")
                     {
                         MessageBox.Show("Please select the payment method", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -482,6 +506,11 @@ namespace POS02_For_Restuarent
                     {
                         MessageBox.Show("Please Calculate the Balance (Click on OK Button)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         tbxBalance.Focus();
+                    }
+                    if(balance != Convert.ToDouble(tbxBalance.Text))
+                    {
+                        MessageBox.Show("!! Please calculate the balance !! (Click on OK Button)","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        btnOK.Focus();
                     }
                     else
                     {
