@@ -831,78 +831,58 @@ namespace POS02_For_Restuarent
 
         private void tbxSearchIncluded_Items_TextChanged(object sender, EventArgs e)
         {
-            if (tbxSearchIncluded_Items.Text == "Search")
+            lbxIncluded_items_to_the_bill.Items.Clear();
+            
+            if (tbxSearchIncluded_Items.Text == "Search" || tbxSearchIncluded_Items.Text == string.Empty)
             {
                 foreach (string listItems in Public_Items.non_barcodeItem_Names)
+                {
+                    lbxIncluded_items_to_the_bill.Items.Add(listItems);
+                }
+
+                foreach (string listItems in Public_Items.barcode_item_names)
                 {
                     lbxIncluded_items_to_the_bill.Items.Add(listItems);
                 }
             }
             else
             {
-                lbxIncluded_items_to_the_bill.Items.Clear();
-                //lbxIncluded_items_to_the_bill.Refresh();
-                //ArrayList ListfilterationCharacters = new ArrayList();
 
                 // use for search Non barcode items
                 foreach (string includedItems in Public_Items.non_barcodeItem_Names)
                 {
-                    //lbxIncluded_items_to_the_bill.Items.Clear();
 
                     foreach (string item in Public_Items.non_barcodeItem_Names)
                     {
                         if (item.StartsWith(tbxSearchIncluded_Items.Text, StringComparison.OrdinalIgnoreCase))
                         {
-                            lbxIncluded_items_to_the_bill.Items.Add(item);
+                            if(!lbxIncluded_items_to_the_bill.Items.Contains(item))
+                            {
+                                lbxIncluded_items_to_the_bill.Items.Add(item);
+                            }
+                            
                         }
                     }
 
 
-                    ///
-                    /// Separate code | this is the second code that tried
-                    /// 
-                    //int lenth =  Convert.ToInt32(tbxSearchIncluded_Items.Text.Length);
-                    //int item_character_count = 0;
-
-                    //while (item_character_count <= lenth)
-                    //{
-                    //    if (tbxSearchIncluded_Items.Text == includedItems[item_character_count].ToString()
-                    //        || tbxSearchIncluded_Items.Text == ListfilterationCharacters + includedItems[item_character_count].ToString())
-                    //    {
-                    //        ListfilterationCharacters.Add(tbxSearchIncluded_Items.Text);
-                    //        tbxBalance.Text = includedItems[item_character_count].ToString();
-                    //    }
-
-                    //    item_character_count++;
-
-                    //}
-
-
-                    ///
-                    /// Separate code | this is the first code that used in first step
-                    /// 
-                    //if (tbxSearchIncluded_Items.Text == includedItems)
-                    //{
-                    //    lbxIncluded_items_to_the_bill.Items.Add(includedItems);
-                    //}
                 }
 
                 // use for search barcode items by using item name
                 foreach (string includedItems in Public_Items.barcode_item_names)
                 {
-                    //lbxIncluded_items_to_the_bill.Items.Clear();
-
-                    foreach(string BarcodeItems in Public_Items.barcode_item_names)
+                   
+                    foreach (string BarcodeItems in Public_Items.barcode_item_names)
                     {
                         if(BarcodeItems.StartsWith(tbxSearchIncluded_Items.Text, StringComparison.OrdinalIgnoreCase))
                         {
-                            lbxIncluded_items_to_the_bill.Items.Add(BarcodeItems);
+                            if(!lbxIncluded_items_to_the_bill.Items.Contains(BarcodeItems))
+                            {
+                                lbxIncluded_items_to_the_bill.Items.Add(BarcodeItems);
+                            }
+                            
                         }
                     }
-                    //if (tbxSearchIncluded_Items.Text == includedItems)
-                    //{
-                    //    lbxIncluded_items_to_the_bill.Items.Add(includedItems);
-                    //}
+                  
                 }
             }
         }
