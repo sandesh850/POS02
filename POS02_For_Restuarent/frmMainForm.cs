@@ -832,6 +832,7 @@ namespace POS02_For_Restuarent
         private void tbxSearchIncluded_Items_TextChanged(object sender, EventArgs e)
         {
             lbxIncluded_items_to_the_bill.Items.Clear();
+            lbxIncluded_items_to_the_bill.Refresh();
             
             if (tbxSearchIncluded_Items.Text == "Search" || tbxSearchIncluded_Items.Text == string.Empty)
             {
@@ -1267,7 +1268,7 @@ namespace POS02_For_Restuarent
 
             graphics.DrawString("-------------------------------------------------------------------", new Font("Arial", 10, FontStyle.Regular), Brushes.Black,new Point(0, initial_value_of_position04 + 22));
 
-            graphics.DrawString("Developed by Ravidu Sandesh", new Font("Arial", 6, FontStyle.Regular), Brushes.Black, new Point(100, initial_value_of_position04 + 35));
+            graphics.DrawString("Developed by Ravindu Sandesh", new Font("Arial", 6, FontStyle.Regular), Brushes.Black, new Point(100, initial_value_of_position04 + 35));
             graphics.DrawString("Contact: 077 1634350", new Font("Arial", 6, FontStyle.Regular), Brushes.Black, new Point(110, initial_value_of_position04 + 45));
 
             ///
